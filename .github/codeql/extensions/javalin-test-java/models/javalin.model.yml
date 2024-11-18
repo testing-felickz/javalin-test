@@ -1,0 +1,23 @@
+extensions:
+  - addsTo:
+      pack: codeql/java-all
+      extensible: sourceModel
+    data:
+      - ["io.javalin.http","Context",true,"queryParam","(String)","","ReturnValue","remote","manual"]
+
+  - addsTo:
+      pack: codeql/java-all
+      extensible: sinkModel
+    data:
+      - ["io.javalin.http","Context",true,"html","(String)","","Argument[0]","js-injection","manual"]
+      - ["io.javalin.http","Context",true,"html","(String)","","Argument[0]","html-injection","manual"]
+
+  - addsTo:
+      pack: codeql/java-all
+      extensible: summaryModel
+    data: []
+
+  - addsTo:
+      pack: codeql/java-all
+      extensible: neutralModel
+    data: []
